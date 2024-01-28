@@ -12,7 +12,7 @@ const App = () => {
   const [alerta, setAlerta] = useState(null);
 
   const agregarColaborador = (nuevoColaborador) => {
-    setColaboradores([ colaboradores, { nuevoColaborador, id: Date.now().toString() }]);
+    setColaboradores([...colaboradores, {...nuevoColaborador, id: Date.now().toString() }]);
     setAlerta({ mensaje: 'Colaborador agregado exitosamente', tipo: 'success' });
 
     setTimeout(() => {
